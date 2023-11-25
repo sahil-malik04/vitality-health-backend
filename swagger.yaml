@@ -23,9 +23,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: login
       tags:
@@ -44,9 +44,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: logout
       tags:
@@ -77,9 +77,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: create facility
       tags:
@@ -94,9 +94,9 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: delete facility
       tags:
@@ -104,9 +104,9 @@ paths:
   /facility/get-facilities:
     get:
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: get facilities
       tags:
@@ -140,9 +140,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: update facility
       tags:
@@ -185,9 +185,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: create patient.
       tags:
@@ -202,9 +202,9 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: delete patient
       tags:
@@ -212,9 +212,9 @@ paths:
   /patient/get-patients:
     get:
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: get patients
       tags:
@@ -260,9 +260,9 @@ paths:
               type: object
         required: true
       responses:
-        '200':
+        "200":
           description: Success!.
-        '400':
+        "400":
           description: Server Error.
       summary: update patient.
       tags:
@@ -271,6 +271,6 @@ security:
   - bearerAuth: []
 servers:
   - description: Production Server
-    url: https://central.myonedx.com/acb/api
+    url:
   - description: Local Server
     url: http://localhost:3000/api

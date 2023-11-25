@@ -35,11 +35,7 @@ app.use(
 );
 
 app.use((req, res, next) => {
-  const allowedOrigins = [
-    "http://127.0.0.1:4200",
-    "http://localhost:4200",
-    "https://central.myonedx.com",
-  ];
+  const allowedOrigins = ["http://127.0.0.1:4200", "http://localhost:4200"];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
