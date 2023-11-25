@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS onedx_central.referrers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(255) NOT NULL,
+    middleName VARCHAR(255),
+    lastName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    street VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    zip VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(20) NOT NULL,
+    mobileNumber VARCHAR(20),
+    faxNumber VARCHAR(20),
+    npi VARCHAR(10) NOT NULL,
+    practiceName VARCHAR(255),
+    status VARCHAR(255) NOT NULL DEFAULT "active",
+    isDeleted BOOLEAN NOT NULL DEFAULT FALSE,
+    createdAt TIMESTAMP NOT NULL DEFAULT NOW(),
+    updatedAt TIMESTAMP NOT NULL DEFAULT NOW()
+)

@@ -1,0 +1,10 @@
+-- ALTER TABLE
+--     onedx_central.settings
+-- MODIFY
+--     columnName type;
+-- ALTER TABLE
+--     onedx_central.settings
+-- ADD
+--     newColumn type;
+-- ALTER TABLE
+--     onedx_central.settings DROP columnName

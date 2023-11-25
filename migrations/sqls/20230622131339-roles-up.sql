@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS onedx_central.roles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    role VARCHAR(255) NOT NULL,
+    pattern VARCHAR(255) NOT NULL,
+    permissions JSON,
+    createdAt TIMESTAMP NOT NULL DEFAULT NOW(),
+    updatedAt TIMESTAMP NOT NULL DEFAULT NOW()
+)

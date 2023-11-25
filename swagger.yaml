@@ -1,0 +1,276 @@
+---
+components:
+  securitySchemes:
+    bearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
+info:
+  version: 0.1.9
+openapi: 3.0.0
+paths:
+  /auth/login:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                code:
+                  type: string
+                redirectUri:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: login
+      tags:
+        - Auth
+  /auth/logout:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                accessToken:
+                  type: string
+                refreshToken:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: logout
+      tags:
+        - Auth
+  /facility/create-facility:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                city:
+                  type: string
+                description:
+                  type: string
+                faxNumber:
+                  type: string
+                name:
+                  type: string
+                phoneNumber:
+                  type: string
+                state:
+                  type: string
+                street:
+                  type: string
+                zip:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: create facility
+      tags:
+        - Facility
+  /facility/delete-facility/{facilityId}:
+    delete:
+      parameters:
+        - description: ID of the facility to retrieve.
+          in: path
+          name: facilityId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: delete facility
+      tags:
+        - Facility
+  /facility/get-facilities:
+    get:
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: get facilities
+      tags:
+        - Facility
+  /facility/update-facility:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                city:
+                  type: string
+                description:
+                  type: string
+                faxNumber:
+                  type: string
+                id:
+                  format: int64
+                  type: number
+                name:
+                  type: string
+                phoneNumber:
+                  type: string
+                state:
+                  type: string
+                street:
+                  type: string
+                zip:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: update facility
+      tags:
+        - Facility
+  /patient/create-patient:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                city:
+                  type: string
+                dob:
+                  type: string
+                email:
+                  type: string
+                emergencyContact:
+                  type: string
+                emergencyPhoneNumber:
+                  type: string
+                firstName:
+                  type: string
+                homeNumber:
+                  type: string
+                lastName:
+                  type: string
+                middleName:
+                  type: string
+                phoneNumber:
+                  type: string
+                sex:
+                  type: string
+                state:
+                  type: string
+                street:
+                  type: string
+                zip:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: create patient.
+      tags:
+        - Patient
+  /patient/delete-patient/{patientId}:
+    delete:
+      parameters:
+        - description: ID of the patient to retrieve.
+          in: path
+          name: patientId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: delete patient
+      tags:
+        - Patient
+  /patient/get-patients:
+    get:
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: get patients
+      tags:
+        - Patient
+  /patient/update-patient:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                city:
+                  type: string
+                dob:
+                  type: string
+                email:
+                  type: string
+                emergencyContact:
+                  type: string
+                emergencyPhoneNumber:
+                  type: string
+                firstName:
+                  type: string
+                homeNumber:
+                  type: string
+                id:
+                  format: int64
+                  type: number
+                lastName:
+                  type: string
+                middleName:
+                  type: string
+                phoneNumber:
+                  type: string
+                sex:
+                  type: string
+                state:
+                  type: string
+                street:
+                  type: string
+                zip:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success!.
+        '400':
+          description: Server Error.
+      summary: update patient.
+      tags:
+        - Patient
+security:
+  - bearerAuth: []
+servers:
+  - description: Production Server
+    url: https://central.myonedx.com/acb/api
+  - description: Local Server
+    url: http://localhost:3000/api

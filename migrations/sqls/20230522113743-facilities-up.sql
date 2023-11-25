@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS onedx_central.facilities (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    street VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    zip VARCHAR(255) NOT NULL,
+    phoneNumber VARCHAR(20) NOT NULL,
+    faxNumber VARCHAR(20),
+    status VARCHAR(255) NOT NULL DEFAULT "active",
+    isDeleted BOOLEAN NOT NULL DEFAULT FALSE,
+    createdAt TIMESTAMP NOT NULL DEFAULT NOW(),
+    updatedAt TIMESTAMP NOT NULL DEFAULT NOW()
+)
